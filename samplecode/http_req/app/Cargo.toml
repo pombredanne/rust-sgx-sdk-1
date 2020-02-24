@@ -1,0 +1,10 @@
+[package]
+name = "app"
+version = "1.0.0"
+authors = ["Piotr Roslaniec <p.roslaniec@gmail.com>"]
+edition = '2018'
+
+[dependencies]
+sgx_types = { path = "../../../sgx_types" }
+sgx_urts  = { path = "../../../sgx_urts" }
+dirs = "1.0.2"

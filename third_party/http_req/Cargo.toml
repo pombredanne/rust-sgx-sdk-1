@@ -1,0 +1,20 @@
+[package]
+name = "http_req"
+version = "0.5.3"
+license = "MIT"
+description = "simple and lightweight HTTP client with built-in HTTPS support"
+repository = "https://github.com/jayjamesjay/http_req"
+authors = ["jayjamesjay"]
+readme = "README.md"
+categories = ["web-programming::http-client", "network-programming"]
+keywords = ["http", "client", "request"]
+edition = "2018"
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_tstd = { path =  "../../sgx_tstd" }
+
+[dependencies]
+rustls = { path = "../rustls" }
+webpki = { path = "../webpki" }
+webpki-roots = { path = "../webpki-roots" }
+unicase = { path = "../unicase" }

@@ -1,0 +1,19 @@
+[package]
+name = "Loggerenclave"
+version = "1.0.0"
+authors = ["Baidu"]
+
+[lib]
+name = "loggerenclave"
+crate-type = ["staticlib"]
+
+[features]
+default = []
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_types = { path = "../../../sgx_types" }
+sgx_tstd = { path = "../../../sgx_tstd" }
+
+[dependencies]
+log_gel = { path = "../../../third_party/mesalock-sgx/log-sgx" }
+env_logger_gel = { path = "../../../third_party/mesalock-sgx/env_logger-sgx" }
